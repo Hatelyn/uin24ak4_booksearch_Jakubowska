@@ -1,20 +1,22 @@
-export default function Layout({children}) {
+import { Link } from "react-router-dom";
+
+export default function Layout({ children }) {
     return (
         <>
-        <header>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Search</li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            {children}
-        </main>
-        <footer>
-            Bye-bye
-        </footer>
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="search">Search</Link></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                {children}
+            </main>
+            <footer>
+                Bye-bye
+            </footer>
         </>
     )
 }

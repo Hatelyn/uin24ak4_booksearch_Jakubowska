@@ -1,3 +1,3 @@
 export default function SearchResults() {
-    return <h1>Click to find Bond</h1>
+    return <h1>You found Bond</h1>
 }
