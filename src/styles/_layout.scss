@@ -1,0 +1,41 @@
+#root{
+    min-height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+header{
+    nav{
+        display: flex;
+        justify-content: space-between;
+        
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+
+            li{
+                a{
+                    color: $antiquewhite;
+                    background-color: $black;
+                    padding: .5rem;
+        
+                    &:hover{
+                        background-color: $antiquewhite;
+                        color: $black;
+                        border: 1px solid;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    align-self: flex-start;
+}

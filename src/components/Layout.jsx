@@ -5,6 +5,7 @@ export default function Layout({ children }) {
         <>
             <header>
                 <nav>
+                    <a href="#">Logo</a>
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="search">Search</Link></li>
