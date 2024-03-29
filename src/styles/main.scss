@@ -17,16 +17,18 @@ main{
         gap: 2rem;
         min-height: 600px;
 
-        #homeIntro {
+        .intro {
             background-image: url(../assets/images/jas-min.jpg); //https://unsplash.com/photos/person-in-red-and-black-plaid-pants-and-white-socks-awQOUrWbI68
             background-size: 1400px auto;
+            min-height: 360px;
             }
             
-        h1{
+        h1, form{
             color: $black;
             background-color: $white;
             padding: 1rem;
             opacity: 80%;
+            margin: auto;
         }
 
         h2{
@@ -46,6 +48,14 @@ main{
 
                 button {
                     margin-bottom: 0;
+                }
+
+                .inStock {
+                    color: green;
+                }
+
+                .empty {
+                    color: red;
                 }
             }
         }  

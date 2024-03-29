@@ -8,7 +8,7 @@ export default function Layout({ children }) {
                     <a href="#" className="logoIcon">Logo</a>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="search">Search</Link></li>
+                        <li><Link to="search">More books</Link></li>
                     </ul>
                 </nav>
             </header>

@@ -1,11 +1,17 @@
-export default function Home({ books }) {
-    console.log("me the book " + books)
+import { useEffect } from "react"
+
+export default function Home({ books, setQuery }) {
+
+    useEffect(() => {
+        setQuery("James Bond")
+    }, [])
+
     return (
         <section>
-            <div id="homeIntro">
+            <div className="intro">
                 <h1>Where will you travel to today?</h1>
             </div>
-            <h2>Today's companion recommendation: James Bond</h2>
+            <h2>Today's recommendation: James Bond</h2>
             <div>
                 {books?.map(product =>
                     <article key={product.key}>
@@ -14,8 +20,7 @@ export default function Home({ books }) {
                         <p>Author/s: {product.author_name}</p>
                         <p>First publish: {product.first_publish_year}</p>
                         <p>Average rating: {product.ratings_average ? product.ratings_average : "No data"}</p>
-                        <button>A_id: {product.amazon_id}</button>
-                        {/*https://www.amazon.com/s?k=0395082544*/}
+                        <button><a href={`https://www.amazon.com/s?k=${product.isbn ? product.isbn[0] : null}`} className={product.isbn ? "inStock" : "empty"}>{product.isbn ? "Buy on Amazon" : "Out of stock"}</a></button>
                     </article>
                 )}
             </div>
