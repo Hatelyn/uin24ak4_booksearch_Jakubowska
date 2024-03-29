@@ -3,7 +3,7 @@
 @import 'layout';
 
 body{
-    background-color: $antiquewhite;
+    background-color: $gray;
     font-family: $fontFamily;
     font-weight: $fontWeightRegular;
     font-size: $fontSize-medium;
@@ -12,5 +12,42 @@ body{
 main{
     background-color: $black;
     color: $antiquewhite;
-    padding: 8rem 4rem;
+
+    section{
+        gap: 2rem;
+        min-height: 600px;
+
+        #homeIntro {
+            background-image: url(../assets/images/jas-min.jpg); //https://unsplash.com/photos/person-in-red-and-black-plaid-pants-and-white-socks-awQOUrWbI68
+            background-size: 1400px auto;
+            }
+            
+        h1{
+            color: $black;
+            background-color: $white;
+            padding: 1rem;
+            opacity: 80%;
+        }
+
+        h2{
+            background-color: $white;
+            color: $black;
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            padding: 1rem 4rem; 
+
+            article {
+                width: 49%;
+
+                button {
+                    margin-bottom: 0;
+                }
+            }
+        }  
+    }
 }
