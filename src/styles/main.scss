@@ -45,18 +45,20 @@ main{
 
             article {
                 width: 49%;
+                background-color: $white;
+                color: $black;
+                min-height: 750px;
+                position: relative;
+
+                img {
+                    max-height: 250px;
+                }
 
                 button {
-                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: 20px;
                 }
 
-                .inStock {
-                    color: green;
-                }
-
-                .empty {
-                    color: red;
-                }
             }
         }  
     }
