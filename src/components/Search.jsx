@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import SearchResults from "./SearchResults"
 
-export default function Search({ books, setQuery, query, prevSearch, setPrevSearch, setBookPage }) {
+export default function Search({ books, setQuery, query, prevSearch, setPrevSearch }) {
     const [search, setSearch] = useState("")
 
+    //useEffect sets page start query to previous one for storing information about our last search rather than it always to be "James Bond"
     useEffect(() => {
         setQuery(prevSearch)
     }, [])
 
+    //If value stored in search variable is longer than 3 characters, then change queries for API calls, else print alert to add more characters
     const handleSubmit = (e) => {
         e.preventDefault()
         if (search.length >= 3) {
@@ -19,10 +21,12 @@ export default function Search({ books, setQuery, query, prevSearch, setPrevSear
         }
     }
 
+    //Stores value of every change in search field
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
 
+    //Returning search field html and sending array further to SearchResults component, which prints out data from API call based on searched query
     return (
         <section>
             <div className="intro">
@@ -33,7 +37,7 @@ export default function Search({ books, setQuery, query, prevSearch, setPrevSear
                 </form>
             </div>
             <h2>Showing results for: {query}</h2>
-            <SearchResults books={books} setBookPage={setBookPage} />
+            <SearchResults books={books} />
         </section>
     )
 }

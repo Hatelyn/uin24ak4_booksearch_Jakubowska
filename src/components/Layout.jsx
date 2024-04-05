@@ -1,6 +1,7 @@
 import { Home } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
+//Layout component with basic set up for every page such as nav, main, footer with children as main content
 export default function Layout({ children }) {
     return (
         <>

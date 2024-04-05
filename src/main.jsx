@@ -6,6 +6,7 @@ import './styles/main.scss'
 
 import {BrowserRouter as Router} from 'react-router-dom'
 
+//Changing to router
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     <App />

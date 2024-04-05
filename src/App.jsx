@@ -8,12 +8,13 @@ import BookCard from './components/BookCard'
 
 function App() {
 
+  //Variables for 1. books array taken from API, 
+  //2. current query search, start with "home" value "James Bond", 3. previous search, so search page doesn't start with "James Bond" after first search
   const [books, setBooks] = useState([])
   const [query, setQuery] = useState("James Bond")
   const [prevSearch, setPrevSearch] = useState("James Bond")
-  const [bookPage, setBookPage] = useState("")
 
-
+  //Async function calling to API for fetching data
   const getBooks = async () => {
     try {
       const response = await fetch(`https://openlibrary.org/search.json?title=${query}`)
@@ -24,16 +25,18 @@ function App() {
     }
   }
 
+  //useEffect to run fetch request with page start
   useEffect(() => {
     getBooks()
   }, [query])
 
+  //Returning Layout component with routes as children for dynamic routing.
   return (
     <Layout>
       <Routes>
-        <Route index element={<Home books={books} setQuery={setQuery} query={query} setBookPage={setBookPage} />} />
+        <Route index element={<Home books={books} setQuery={setQuery} query={query} />} />
       
-        <Route path="search" element={<Search books={books} setQuery={setQuery} query={query} prevSearch={prevSearch} setPrevSearch={setPrevSearch} setBookPage={setBookPage} />} />
+        <Route path="search" element={<Search books={books} setQuery={setQuery} query={query} prevSearch={prevSearch} setPrevSearch={setPrevSearch} />} />
         <Route path='works/:slug' element={<BookCard />} />
       </Routes>
     </Layout>
