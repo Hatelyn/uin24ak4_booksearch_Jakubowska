@@ -1,0 +1,12 @@
+.singleBook {
+    width: 80%;
+    background-color: $white;
+    color: $black;
+    position: relative;
+    padding: 4rem; 
+    margin: 60px;
+
+        img {
+            max-height: 400px;
+        }
+}

@@ -1,3 +1,4 @@
+import { Home } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 export default function Layout({ children }) {
@@ -5,7 +6,8 @@ export default function Layout({ children }) {
         <>
             <header>
                 <nav>
-                    <a href="#" className="logoIcon">Logo</a>
+                    <Link to="/" className="logoIcon"><Home fontSize="large" /></Link>
+                    
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="search">More books</Link></li>
@@ -16,7 +18,7 @@ export default function Layout({ children }) {
                 {children}
             </main>
             <footer>
-                Bye-bye
+                Copyright 2024
             </footer>
         </>
     )

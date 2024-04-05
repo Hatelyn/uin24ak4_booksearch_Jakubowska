@@ -1,0 +1,23 @@
+@media (max-width: 1000px){
+    #root{
+        padding: 0.5rem;
+        font-size: $fontSize-small;
+    }
+
+    main section div {
+        padding: 0!important;
+    
+        article{
+        width: 100%!important;
+
+            div{
+                flex-wrap: wrap!important;
+                margin: 0 20px;
+            }
+        }
+    }
+    .singleBook{
+        width: auto;
+        margin: 0;
+    }
+}

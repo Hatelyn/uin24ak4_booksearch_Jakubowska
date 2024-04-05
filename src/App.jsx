@@ -4,12 +4,15 @@ import Layout from './components/Layout'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Search from './components/Search'
+import BookCard from './components/BookCard'
 
 function App() {
 
   const [books, setBooks] = useState([])
   const [query, setQuery] = useState("James Bond")
   const [prevSearch, setPrevSearch] = useState("James Bond")
+  const [bookPage, setBookPage] = useState("")
+
 
   const getBooks = async () => {
     try {
@@ -28,9 +31,10 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route index element={<Home books={books} setQuery={setQuery} />} />
-        <Route path="search/*" element={<Search books={books} setQuery={setQuery} query={query} prevSearch={prevSearch} setPrevSearch={setPrevSearch} />}>
-        </Route>
+        <Route index element={<Home books={books} setQuery={setQuery} query={query} setBookPage={setBookPage} />} />
+      
+        <Route path="search" element={<Search books={books} setQuery={setQuery} query={query} prevSearch={prevSearch} setPrevSearch={setPrevSearch} setBookPage={setBookPage} />} />
+        <Route path='works/:slug' element={<BookCard />} />
       </Routes>
     </Layout>
   )

@@ -1,6 +1,8 @@
 @import 'colors';
 @import 'fonts';
 @import 'layout';
+@import 'book';
+@import 'media';
 
 body{
     background-color: $gray;
@@ -54,11 +56,16 @@ main{
                     max-height: 250px;
                 }
 
-                button {
+                div {
+                    flex-wrap: nowrap;
+                    justify-content: space-around;
                     position: absolute;
                     bottom: 20px;
-                }
 
+                    a {
+                        align-content: center;
+                    }
+                }
             }
         }  
     }
